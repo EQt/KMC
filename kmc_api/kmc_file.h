@@ -120,28 +120,28 @@ public:
 	bool SetMinCount(uint32 x);
 
 	// Return a value of min_count. Kmers with counters below this theshold are ignored 
-	uint32 GetMinCount(void);
+	uint32 GetMinCount();
 
 	// Set the maximal value for a counter. Kmers with counters above this theshold are ignored
 	bool SetMaxCount(uint32 x);
 
 	// Return a value of max_count. Kmers with counters above this theshold are ignored 
-	uint64 GetMaxCount(void);
+	uint64 GetMaxCount();
 	
 	//Return true if kmc was run without -b switch.
-	bool GetBothStrands(void);
+	bool GetBothStrands();
 
 	// Return the total number of kmers between min_count and max_count
-	uint64 KmerCount(void);
+	uint64 KmerCount();
 
 	// Return the length of kmers
-	uint32 KmerLength(void);
+	uint32 KmerLength();
 
 	// Set initial values to enable listing kmers from the begining. Only in listing mode
-	bool RestartListing(void);
+	bool RestartListing();
 
 	// Return true if all kmers are listed
-	bool Eof(void);
+	bool Eof();
 
 	// Return true if kmer exists. In this case return kmer's counter in count
 	bool CheckKmer(CKmerAPI &kmer, float &count);
@@ -154,7 +154,7 @@ public:
 	bool IsKmer(CKmerAPI &kmer);
 
 	// Set original (readed from *.kmer_pre) values for min_count and max_count
-	void ResetMinMaxCounts(void);
+	void ResetMinMaxCounts();
 
 	// Get current parameters from kmer_database
 	bool Info(uint32 &_kmer_length, uint32 &_mode, uint32 &_counter_size, uint32 &_lut_prefix_length, uint32 &_signature_len, uint32 &_min_count, uint64 &_max_count, uint64 &_total_kmers);

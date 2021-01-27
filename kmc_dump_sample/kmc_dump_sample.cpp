@@ -15,7 +15,7 @@
 #include <iostream>
 #include "../kmc_api/kmc_file.h"
 
-void print_info(void);
+void print_info();
 
 //----------------------------------------------------------------------------------
 // Check if --help or --version was used
@@ -148,7 +148,7 @@ int _tmain(int argc, char* argv[])
 // -------------------------------------------------------------------------
 // Print execution options 
 // -------------------------------------------------------------------------
-void print_info(void)
+void print_info()
 {
 	std::cout << "KMC dump ver. " << KMC_VER << " (" << KMC_DATE << ")\n"
 			  << "\nUsage:\nkmc_dump [options] <kmc_database> <output_file>\n"

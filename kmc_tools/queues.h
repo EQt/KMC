@@ -244,7 +244,7 @@ public:
 			stack[i] = i;
 	}
 
-	void release(void) {
+	void release() {
 		if (raw_buffer)
 			delete[] raw_buffer;
 		raw_buffer = NULL;

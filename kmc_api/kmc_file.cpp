@@ -410,7 +410,7 @@ bool CKMCFile::CheckKmer(CKmerAPI &kmer, uint64 &count)
 // Check if end of file
 // RET: true - all kmers are listed
 //-----------------------------------------------------------------------------------------------
-bool CKMCFile::Eof(void)
+bool CKMCFile::Eof()
 {
 	return end_of_file;	
 }
@@ -661,7 +661,7 @@ bool CKMCFile::Close()
 // Set initial values to enable listing kmers from the begining. Only in listing mode
 // RET: true - if a file has been opened for listing
 //----------------------------------------------------------------------------------
-bool CKMCFile::RestartListing(void)
+bool CKMCFile::RestartListing()
 {
 	if(is_opened == opened_for_listing)
 	{
@@ -707,7 +707,7 @@ bool CKMCFile::SetMinCount(uint32 x)
 // Return a value of min_count. Kmers with counters below this theshold are ignored 
 // RET	: a value of min_count
 //----------------------------------------------------------------------------------------
-uint32 CKMCFile::GetMinCount(void)
+uint32 CKMCFile::GetMinCount()
 {
 	return min_count;
 }
@@ -733,7 +733,7 @@ bool CKMCFile::SetMaxCount(uint32 x)
 // Return a value of max_count. Kmers with counters above this theshold are ignored 
 // RET	: a value of max_count
 //----------------------------------------------------------------------------------------
-uint64 CKMCFile::GetMaxCount(void)
+uint64 CKMCFile::GetMaxCount()
 {
 	return max_count;
 }
@@ -742,7 +742,7 @@ uint64 CKMCFile::GetMaxCount(void)
 // Return true if KMC was run without -b switch
 // RET	: a value of both_strands
 //----------------------------------------------------------------------------------------
-bool CKMCFile::GetBothStrands(void)
+bool CKMCFile::GetBothStrands()
 {
 	return both_strands;
 }
@@ -752,7 +752,7 @@ bool CKMCFile::GetBothStrands(void)
 //----------------------------------------------------------------------------------------
 // Set original (readed from *.kmer_pre) values for min_count and max_count
 //----------------------------------------------------------------------------------------
-void CKMCFile::ResetMinMaxCounts(void)
+void CKMCFile::ResetMinMaxCounts()
 {
 	min_count = original_min_count;
 	max_count = original_max_count;
@@ -762,7 +762,7 @@ void CKMCFile::ResetMinMaxCounts(void)
 // Return the length of kmers
 // RET	: the length of kmers
 //----------------------------------------------------------------------------------------
-uint32 CKMCFile::KmerLength(void)
+uint32 CKMCFile::KmerLength()
 {
 	return kmer_length;			
 }
@@ -785,7 +785,7 @@ bool CKMCFile::IsKmer(CKmerAPI &kmer)
 // Check the total number of kmers between current min_count and max_count
 // RET	: total number of kmers or 0 if a database has not been opened
 //-----------------------------------------------------------------------------------------
-uint64 CKMCFile::KmerCount(void)
+uint64 CKMCFile::KmerCount()
 {
 	if(is_opened)
 		if((min_count == original_min_count) && (max_count == original_max_count))

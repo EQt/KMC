@@ -45,7 +45,7 @@ class CSmallSort {
 	static void shell_sort_1_8(CKmer<SIZE> *ptr, uint32 size);
 	static void shell_sort_1_10(CKmer<SIZE> *ptr, uint32 size);
 
-	static void PrepareArray(void)
+	static void PrepareArray()
 	{
 		arr = new CKmer<SIZE>[ArraySize];
 		arr_orig = new CKmer<SIZE>[ArraySize];
@@ -60,7 +60,7 @@ class CSmallSort {
 
 	}
 
-	static void ReleaseArray(void)
+	static void ReleaseArray()
 	{
 		delete[] arr;
 		delete[] arr_orig;
@@ -103,7 +103,7 @@ class CSmallSort {
 			}
 	}
 
-	static void SmoothTimes(void)
+	static void SmoothTimes()
 	{
 		auto n_sorters = sorter_times.front().size();
 		auto n_values = sorter_times.size();
@@ -116,7 +116,7 @@ class CSmallSort {
 		}
 	}
 	
-	static void SelectBestSorters(void)
+	static void SelectBestSorters()
 	{
 		auto n_sorters = sorter_times.front().size();
 		auto n_values = sorter_times.size();

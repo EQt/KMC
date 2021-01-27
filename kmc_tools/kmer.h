@@ -58,7 +58,7 @@ template<unsigned SIZE> struct CKmer {
 	inline bool operator==(const CKmer<SIZE> &x);
 	inline bool operator<(const CKmer<SIZE> &x)const;
 
-	inline void clear(void);
+	inline void clear();
 
 	inline char get_symbol(int p);
 
@@ -259,7 +259,7 @@ template<unsigned SIZE> inline bool CKmer<SIZE>::operator<(const CKmer<SIZE> &x)
 
 
 // *********************************************************************
-template<unsigned SIZE> inline void CKmer<SIZE>::clear(void)
+template<unsigned SIZE> inline void CKmer<SIZE>::clear()
 {
 #ifdef USE_META_PROG
 	IterFwd([&](const int &i){
@@ -426,7 +426,7 @@ template<> struct CKmer<1> {
 	bool operator==(const CKmer<1> &x);
 	bool operator<(const CKmer<1> &x)const;
 
-	void clear(void);
+	void clear();
 
 	inline char get_symbol(int p);
 
@@ -531,7 +531,7 @@ inline bool CKmer<1>::operator<(const CKmer<1> &x)const {
 }
 
 // *********************************************************************
-inline void CKmer<1>::clear(void)
+inline void CKmer<1>::clear()
 {
 	data = 0ull;
 }

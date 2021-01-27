@@ -908,7 +908,7 @@ public:
 			stack[i] = i;
 	}
 
-	void release(void) {
+	void release() {
 		if(raw_buffer)
 			delete[] raw_buffer;
 		raw_buffer = nullptr;
@@ -1139,7 +1139,7 @@ public:
 		map_reserved[total_size] = 0;							// guard
 	}
 
-	void release(void) {
+	void release() {
 		if (raw_buffer)
 			::free(raw_buffer);
 		raw_buffer = nullptr;
